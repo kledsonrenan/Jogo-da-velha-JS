@@ -1,0 +1,79 @@
+body, html {
+	height: 100%;
+	font-family: "Roboto", "Roboto-Slab", "Arial", sans-serif;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: forestgreen;
+}
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.velha {
+	display: flex;
+	justify-content: center;
+}
+.velha .coluna {
+	display: flex;
+	flex-direction: column;
+	border-right: 3px solid white;
+}
+.velha .coluna:last-child {
+	border: none;
+}
+.velha .quadro {
+	width: 125px;
+	height: 125px;
+	border-bottom: 3px solid white;
+	color: aliceblue;
+	font-size: 5em;
+	font-weight: 100;
+	text-align: center;
+}
+.velha .quadro:last-child {
+	border: none;
+}
+span {
+	user-select: none; /* Não permite a seleção do conteudo dos quadros X e O */
+	margin: 0;
+}
+#modais {
+	position: absolute;
+	margin: 130px auto;
+	font-family: inherit;
+	z-index: 999;
+}
+.modal-class {
+	background: #36c;
+	width: 200px;
+	padding: 20px;
+	display: block;
+	margin-bottom: 10px;
+	animation-name: showIn;
+	animation-duration: .5s;
+}
+.out {
+	animation: showOut .5s;
+	animation-fill-mode: forwards;
+}
+@keyframes showIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes showOut {
+	50% {
+		transform: translateX(5%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
