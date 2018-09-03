@@ -11,31 +11,28 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed">
-		  <a class="navbar-brand" href="index.html"># Jogo da velha #</a>
-		  <div class="collapse navbar-collapse" id="navbarColor01">
-			<ul class="navbar-nav mr-auto">
-			  <li class="nav-item" id="salva-local">
-				<a class="nav-link" href="#">Salvar local</a>
-			  </li>
-			  <li class="nav-item" id="carrega-local">
-				<a class="nav-link" href="#">Carregar local</a>
-			  </li>
-			  <li id="limpar-local" class="nav-item">
-				<a class="nav-link" href="#">Limpar local</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">About</a>
-			  </li>
-			</ul>
-			<form class="form-inline my-2 my-lg-0">
-			  <input id="jogador-x" class="form-control mr-sm-2" type="text" placeholder="Jogador X" autofocus>
-			  <input id="jogador-o" class="form-control mr-sm-2" type="text" placeholder="Jogador O">
-			  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Salvar</button>
-			</form>
-		  </div>
-		  <div id="modais"></div>
-		</nav>
-	</header>
+					<a class="navbar-brand" href="index.html">Jogo da #</a>
+					<div class="collapse navbar-collapse" id="navbarColor01">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item" id="limpar-tabuleiro">
+								<a class="nav-link" href="#">Novo jogo</a>
+							</li>
+							<li class="nav-item" id="carrega-local">
+							<a class="nav-link" href="#">Carregar ultima partida</a>
+							</li>
+							<li id="limpar-local" class="nav-item">
+							<a class="nav-link" href="#">Limpar dados</a>
+							</li>
+						</ul>
+						<form class="form-inline my-2 my-lg-0">
+							<input id="jogador-x" class="form-control mr-sm-2" type="text" placeholder="Jogador X" autofocus>
+							<input id="jogador-o" class="form-control mr-sm-2" type="text" placeholder="Jogador O">
+							<button class="btn btn-secondary my-2 my-sm-0" type="submit">Salvar</button>
+						</form>
+					</div>
+					<div id="modais"></div>
+				</nav>
+		</header>
 	
 	<div id="velha" class="velha">
 		<div class="coluna">
@@ -54,7 +51,6 @@
 			<span data-id="8" class="quadro"></span>
 		</div>
 	</div>
-
 	<script src="script.js"></script>
 </body>
 </html>

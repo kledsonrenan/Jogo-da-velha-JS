@@ -49,7 +49,9 @@ span {
 	z-index: 999;
 }
 .modal-class {
-	background: #36c;
+	background: forestgreen;
+	font-weight: bolder;
+	color: white;
 	width: 200px;
 	padding: 20px;
 	display: block;

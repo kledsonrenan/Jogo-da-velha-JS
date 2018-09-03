@@ -23,15 +23,16 @@ class Game {
 		// Nomes dos Jogadores
 		this.jogadorX = document.querySelector('#jogador-x');
 		this.jogadorO = document.querySelector('#jogador-o');
-		// Metodos para cada item de menu - salvar, carregar, limpar
-		this.salvarLocal = document.querySelector('#salva-local');
-		this.salvarLocal.addEventListener('click', this.salvaLocal.bind(this));
-
+		// Metodos para cada item de menu - salvar, carregar, limpar-tabuleiro - limpar-dados
 		this.carregarLocal = document.querySelector('#carrega-local');
 		this.carregarLocal.addEventListener('click', this.carregaLocal.bind(this));
 
+		this.limparTabuleiro = document.querySelector('#limpar-tabuleiro');
+		this.limparTabuleiro.addEventListener('click', this.limpaTabuleiro.bind(this));
+
 		this.limparLocal = document.querySelector('#limpar-local');
 		this.limparLocal.addEventListener('click', this.limpaLocal.bind(this));
+		
 		// Tabuleiro
 		this.velha = document.querySelector('#velha');
 		this.velha.addEventListener('click', (event) => {
@@ -72,6 +73,10 @@ class Game {
 		this.jogadas = dados.jogadas;
 		this.render();
 	}
+	limpaTabuleiro() {
+		this.iniciaEstados();
+		this.render();
+	}
 	limpaLocal() {
 		// Limpa os dados do LocalStorage
 		localStorage.removeItem('Jogo');
@@ -91,7 +96,7 @@ class Game {
 			this.modal('Partida terminada!');
 			return;
 		}
-		// Verifica se o alvo já foi clicado
+		// Verifica se o alvo foi clicado
 		if ( !event.target.dataset.id ) {
 			this.modal('VC nao clicou em uma casa corretamente!');
 			return;
@@ -106,6 +111,7 @@ class Game {
 		this.jogadas[id] = this.turn ? "X" : "O";
 		// Troca de turno de X para O e vice versa
 		this.turn = !this.turn;
+		this.salvaLocal();
 	}
 	render() {
 		const resultado = this.verificaWin();
